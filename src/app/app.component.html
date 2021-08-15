@@ -1,7 +1,18 @@
-<div>
-  <ul>
-    <li *ngFor="let item of items;trackBy:trackBy "> {{item.name}} </li>
-  </ul>
-</div>
+<!-- <div>
+  <angular-tag-cloud
+    [data]="data">
+  </angular-tag-cloud>
+</div> -->
+<!--
+<p >
+  {{userData$ |async |json}}
+</p> -->
+<div *ngIf="userData$ | async as User">
+  <p id="id">
+    {{ User.id }}
+  </p>
 
-<input type="button" value="Add Angular" (click)="addItem()">
+  <p id="first-name">
+    {{ User.first_name }}
+  </p>
+</div>
